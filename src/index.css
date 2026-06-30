@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-surface text-zinc-200 font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    margin: 0;
+  }
+  /* Light theme overrides */
+  html.light body {
+    @apply bg-zinc-50 text-zinc-800;
+  }
+  html.light .card {
+    @apply bg-white/90 border-zinc-200;
+  }
+  html.light .btn-ghost {
+    @apply text-zinc-700 border-zinc-200 hover:bg-zinc-100 hover:text-zinc-900;
+  }
+  html.light .text-white {
+    color: #0a0a0a;
+  }
+  html.light .text-zinc-300 {
+    color: #3f3f46;
+  }
+  html.light .text-zinc-400 {
+    color: #52525b;
+  }
+  html.light .text-zinc-500 {
+    color: #71717a;
+  }
+  html.light .bg-white\/5 {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  html.light .bg-white\/10 {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+  html.light .border-white\/5,
+  html.light .border-white\/10 {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  html.light .bg-surface\/80 {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+  html.light .hover\:bg-white\/5:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  ::selection {
+    @apply bg-brand-red-500/30 text-white;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .hairline {
+    @apply border border-white/10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 select-none;
+  }
+  .btn-primary {
+    @apply btn bg-brand-red-500 text-white hover:bg-brand-red-600 hover:shadow-glow-red active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn border border-white/10 text-zinc-200 hover:border-brand-red-500/60 hover:text-white hover:bg-white/5;
+  }
+  .card {
+    @apply rounded-2xl bg-surface-raised/80 backdrop-blur-sm hairline shadow-card;
+  }
+  .section-title {
+    @apply text-2xl sm:text-3xl font-semibold tracking-tight text-white;
+  }
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] text-brand-red-400 font-medium;
+  }
+  .ring-red-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
+}
