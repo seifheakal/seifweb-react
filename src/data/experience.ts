@@ -77,7 +77,7 @@ export const experiences: ExperienceEntry[] = [
   {
     id: 'teaching-assistant',
     title: 'Teaching Assistant',
-    organization: 'Nermen Ismail School',
+    organization: 'Nermin Ismail Schools',
     description:
       'Mentored students in mathematics and computer science courses, simplifying complex concepts and supporting problem-solving sessions.',
     category: 'extras',
